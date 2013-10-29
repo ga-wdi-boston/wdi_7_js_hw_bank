@@ -1,28 +1,28 @@
 var Account = function(name, balance){
 	this.name = name;
 	this.balance = balance;
-	deposit: function(amount) {
+	this.deposit = function(amount) {
 		balance = balance + amount;
 		return "New balance is " + balance;
 	},
-	withdrawal: function(amount) {
-		if (balance - amount) < 0 {
+	this.withdrawal = function(amount){
+		if ((balance - amount) < 0) {
 			return "Insufficient funds.";
 		}
 		else {
 			balance = balance - amount;
 			return "New balance is " + balance;
 		}
-	}
+	};
 }
 
 
 
 var Bank = {
 	accounts: [
-	{name: "Matt Clement", balance: 1000},
-	{name: "Abby Howell", balance: 500},
-	{name: "Blake Ruddock", balance: 100.68}
+	// {name: "Matt Clement", balance: 1000},
+	// {name: "Abby Howell", balance: 500},
+	// {name: "Blake Ruddock", balance: 100.68}
 	],
 	// all_accounts: function() {
 	// 	return this.accounts.length;
@@ -39,7 +39,7 @@ var Bank = {
 		return total;
 	},
 	enroll_new_account: function(name, balance) {
-		this.accounts.push({name: name, balance: balance});
+		this.accounts.push(new Account(name, balance));
 		return "Account added.";
 	}
 }
