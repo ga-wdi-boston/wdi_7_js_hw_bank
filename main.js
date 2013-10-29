@@ -2,7 +2,7 @@ var Account = function(name, balance){
 	this.name = name;
 	this.balance = balance;
 	this.deposit = function(amount) {
-		balance = balance + amount;
+		balance += amount;
 		return "New balance is " + balance;
 	},
 	this.withdrawal = function(amount){
@@ -10,13 +10,11 @@ var Account = function(name, balance){
 			return "Insufficient funds.";
 		}
 		else {
-			balance = balance - amount;
+			balance -= amount;
 			return "New balance is " + balance;
 		}
-	};
+	}
 }
-
-
 
 var Bank = {
 	accounts: [],
@@ -36,5 +34,3 @@ var Bank = {
 		return "Account added.";
 	}
 }
-
-
