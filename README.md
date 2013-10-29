@@ -8,6 +8,8 @@ There is only one bank. This bank has an array of accounts. The bank needs a met
 
 The bank has many accounts. Accounts should be objects that all share a set of common functionality. Note what Tom taught this evening for inherietance and create/cloning. 
 
+#### Accounts
+
 Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance. 
 
 There is no need to write a user interface. Make sure functions return values instead of print them. However, you should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected. 
