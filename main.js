@@ -31,10 +31,9 @@ var Bank = {
 	all_account_owners: function(){
 		return this.accounts.map(function(account){return account.owner_name;});
 	},
-	transfer: function(from_account, to_account, balance){
+	transfer: function(from_account, to_account, amount){
 		from_account.withdrawal(amount);
 		to_account.deposit(amount);
-		return "Your transfer was successful. " + to_account.owner_name + " now has $" to_account.current_balance + ".00";
 	}
 };
 
@@ -57,6 +56,8 @@ console.log(my_new_account.withdrawal(1000));
 
 var matts_account = new Account(600, 'Matt');
 Bank.enroll_new_account(matts_account);
-console.log(Bank.transfer(matts_account, my_new_account, 35));
+Bank.transfer(matts_account, my_new_account, 35);
+console.log(my_new_account.current_balance);
+console.log(matts_account.current_balance);
 
 
