@@ -14,6 +14,9 @@ Accounts have a current balance and owner's name. You should be able to deposit 
 
 There is no need to write a user interface. Make sure functions return values instead of print them. However, you should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected. 
 
+### Tips
+
+Don't overthink this. Shorter code is probably the answer. 
 
 ## Bonus
 
