@@ -19,14 +19,7 @@ var Account = function(name, balance){
 
 
 var Bank = {
-	accounts: [
-	// {name: "Matt Clement", balance: 1000},
-	// {name: "Abby Howell", balance: 500},
-	// {name: "Blake Ruddock", balance: 100.68}
-	],
-	// all_accounts: function() {
-	// 	return this.accounts.length;
-	// }
+	accounts: [],
 	sum_accounts: function() {
 		var max, x, total;
 		max = this.accounts.length;
