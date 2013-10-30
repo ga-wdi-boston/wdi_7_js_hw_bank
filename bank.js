@@ -22,14 +22,26 @@ var bank = {
 		var balances = (this.accounts.map(function(account){return account.balance}));
 		var sum = 0; 
 		balances.forEach(function(value){ sum += value; });
-		return sum
-	}
+		return sum;
+	}, 
+    enroll_new_account: function() {
+    var get_owner = prompt("Name of New Account Holder:");
+    var get_balance = prompt("Initial Balance:");
+    var new_account = { owner: get_owner , balance: get_balance};    
+    this.accounts.push(new_account);
+    return this.accounts; 
+    }
 }
 
-bank.__proto__ = account
 
-var account = {
+account.__proto__ = bank 
 
-	this.owner = this.accounts.map(function(account){return account.owner});
-}
+// var account = {
+
+// 	this.owner = this.accounts.map(function(account){return account.owner});
+
+//     enroll_new_account: function () {
+//         accounts.
+//     }
+// }
 
