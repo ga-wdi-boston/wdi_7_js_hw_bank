@@ -12,7 +12,7 @@
 
 // There is no need to write a user interface. Make sure functions return values instead of print them. However, you should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected. 
 
-var bank = { 
+var Bank = { 
 	accounts: [
 	{owner: "Amal", balance: 1000}, 
 	{owner:"Kamal", balance: 2000}, 
@@ -24,24 +24,26 @@ var bank = {
 		balances.forEach(function(value){ sum += value; });
 		return sum;
 	}, 
-    enroll_new_account: function() {
-    var get_owner = prompt("Name of New Account Holder:");
-    var get_balance = prompt("Initial Balance:");
-    var new_account = { owner: get_owner , balance: get_balance};    
-    this.accounts.push(new_account);
-    return this.accounts; 
+    enroll_new_account: function(owner, balance) {
+        var new_account = { owner: owner, balance: balance};    
+        this.accounts.push(new_account);
+        return this.accounts; 
     }
-}
+};
+
+var Account = function(owner, balance){
+        this.owner =owner;
+        this.balance = balance; 
+        this.deposit = function(amount) {
+            this.balance = amount + this.balance;
+            return this.balance; 
+        } 
+        this.withdrawal = function(amount) {
+            this.balance = this.balance - amount;
+            return this.balance;
+        }
+    };
 
 
-account.__proto__ = bank 
 
-// var account = {
-
-// 	this.owner = this.accounts.map(function(account){return account.owner});
-
-//     enroll_new_account: function () {
-//         accounts.
-//     }
-// }
 
