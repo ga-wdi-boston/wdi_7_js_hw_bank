@@ -1,20 +1,21 @@
-var Account = function(name, balance){
-	this.name = name;
-	this.balance = balance;
-	this.deposit = function(amount) {
-		balance += amount;
-		return "New balance is " + balance;
-	},
-	this.withdrawal = function(amount){
-		if ((balance - amount) < 0) {
-			return "Insufficient funds.";
-		}
-		else {
-			balance -= amount;
-			return "New balance is " + balance;
-		}
-	}
-}
+var Account = function (name, balance) {
+        "use strict";
+        this.name = name;
+        this.balance = balance;
+        this.deposit = function (amount) {
+            this.balance = this.balance + amount;
+            return "New balance is " + this.balance;
+        };
+        this.withdrawal = function (amount) {
+            if ((this.balance - amount) < 0) {
+                return "Insufficient funds.";
+            }
+            else {
+                    this.balance = this.balance - amount;
+                    return "New balance is " + this.balance;
+                }
+        };
+    };
 
 var Bank = {
 	accounts: [],
