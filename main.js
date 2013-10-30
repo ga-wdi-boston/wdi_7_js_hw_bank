@@ -1,4 +1,4 @@
-// bank definition
+// bank object
 var Bank = {
   accounts: [],
   total_sum_of_money: function() {
@@ -8,40 +8,40 @@ var Bank = {
     this.accounts.push(account);
   },
   account_holder_list: function() {
-    return this.accounts.map(function(acct){return acct.owner;});
+    return this.accounts.map(function(acct){ return acct.owner; });
   }
 };
 
-// account definition
+// account constructor
 var Account = function(owner, initial_deposit) {
-
   this.owner = owner;
   this.balance = initial_deposit;
+};
 
-  this.deposit = function(amount) {
-    this.balance += amount;
-  };
+// account methods
+Account.prototype.deposit = function(amount) {
+  this.balance += amount;
+};
 
-  this.withdraw = function(amount) {
-    if (amount > this.balance) { 
-      this.overdraft_protection();
-    } else {
-      this.balance -= amount;
-    }
-  };
+Account.prototype.withdraw = function(amount) {
+  if (amount > this.balance) { 
+    this.overdraft_protection();
+  } else {
+    this.balance -= amount;
+  }
+};
 
-  this.transfer = function(amount, account) {
-    if (amount > this.balance) { 
-      this.overdraft_protection();
-    } else {
-      this.balance -= amount;
-      account.balance += amount;
-    }
-  };
+Account.prototype.transfer = function(amount, account) {
+  if (amount > this.balance) { 
+    this.overdraft_protection();
+  } else {
+    this.balance -= amount;
+    account.balance += amount;
+  }
+};
 
-  this.overdraft_protection = function(amount, account) {
-    return "Sorry, there is not enough money to complete this transaction. You only have $" + this.balance + " in your account.";
-  };
+Account.prototype.overdraft_protection = function(amount, account) {
+  return "Sorry, there is not enough money to complete this transaction. You only have $" + this.balance + " in your account.";
 };
 
 // account initialization
