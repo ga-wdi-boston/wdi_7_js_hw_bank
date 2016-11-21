@@ -35,6 +35,6 @@ Begin exploring the [JavaScript Koans](https://github.com/ga-students/JavaScript
 
 We'll be doing some DOM manipulation (read [here](http://en.wikipedia.org/wiki/Document_Object_Model) and [here](https://developer.mozilla.org/en-US/docs/DOM) in the morning, and then following up with [closures](http://en.wikipedia.org/wiki/Closure_(computer_science)) in the afternoon. 
 
-Later in the week we'll dive into testing with [Jasmine](http://pivotal.github.io/jasmine/), and then into [Events](https://developer.mozilla.org/en-US/docs/Web/API/Event).
+Later in the week we'll dive into testing with [Jasmine](https://jasmine.github.io/), and then into [Events](https://developer.mozilla.org/en-US/docs/Web/API/Event).
 
 The big goal for next week is to get into JavaScript + Ajax + jQuery + Rails to have data loading asyncronously from the server and rendering to our web browser. While it was made for Rails 3, the [Railscast on the subject](http://railscasts.com/episodes/136-jquery-ajax-revised) will give an excellent preview/introduction to this.  
